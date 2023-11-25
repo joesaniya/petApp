@@ -1,5 +1,6 @@
 import 'package:demoapp/Views/widgets/hotel-detail.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -66,6 +67,7 @@ class _DetailPageState extends State<DetailPage> {
               SizedBox(
                 height: double.infinity,
                 child: buildHotelDetails(
+                  context,
                   Colors.black,
                   Colors.white,
                   extendDetails,
@@ -148,7 +150,7 @@ class _DetailPageState extends State<DetailPage> {
             ),
           ),
         ),
-        Positioned(
+        /*    Positioned(
           // top: 24,
           top: 54,
           child: Padding(
@@ -172,14 +174,13 @@ class _DetailPageState extends State<DetailPage> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
+                Expanded(
                   child: Container(
                     width: 101,
                     height: 44,
                     decoration: const BoxDecoration(
-                        color: Color(0x66C4C4C4),
-                        // color: Colors.amber,
+                        // color: Color(0x66C4C4C4),
+                        color: Colors.amber,
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -200,32 +201,70 @@ class _DetailPageState extends State<DetailPage> {
               ],
             ),
           ),
-        )
-        /*  Align(
+        )*/
+        Align(
           alignment: Alignment.topLeft,
           child: Padding(
             padding: EdgeInsets.only(
-              top: paddingTop,
-              left: size.width * 0.05,
-            ),
-            child: InkWell(
-              onTap: () {},
-              child: Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: defaultColor,
+                top: paddingTop,
+                left: size.width * 0.05,
+                right: size.width * 0.05),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: 44,
+                    height: 44,
+                    decoration: const BoxDecoration(
+                        color: Color(0x66B0B0B0),
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    child: IconButton(
+                      onPressed: () => Navigator.of(context).pop(),
+                      icon: const Icon(
+                        // MdiIcons.chevronLeft,
+                        FeatherIcons.x,
+
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
-                child: Icon(
-                  // UniconsLine.arrow_left,
-                  Icons.arrow_back_ios_sharp,
-                  color: secondColor,
-                  size: size.height * 0.035,
+                Container(
+                  width: 101,
+                  height: 44,
+                  decoration: const BoxDecoration(
+                      color: Color(0x66C4C4C4),
+                      // color: Colors.amber,
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      Text(
+                        'Verified',
+                        style: TextStyle(
+                            color: Color(0xffF7F7F8),
+                            fontSize: 13,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: -0.41),
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Icon(
+                        FeatherIcons.userCheck,
+                        size: 18,
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
           ),
         ),
-      */
       ],
     );
   }

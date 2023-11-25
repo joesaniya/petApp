@@ -9,9 +9,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _mailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController =
+      TextEditingController(text: 'test');
+  final TextEditingController _mailController =
+      TextEditingController(text: 'test@gmail.com');
+  final TextEditingController _passwordController =
+      TextEditingController(text: '12456');
 
   bool _obscureText = true;
 
@@ -269,7 +272,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),*/
       bottomNavigationBar: Container(
-          margin: const EdgeInsets.symmetric(vertical: 40, horizontal: 23),
+          margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 23),
           child: RichText(
             text: const TextSpan(
               style: TextStyle(),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-AnimatedPadding buildHotelDetails(
-    Color defaultColor, Color secondColor, bool extendDetails, Size size) {
+AnimatedPadding buildHotelDetails(BuildContext context, Color defaultColor,
+    Color secondColor, bool extendDetails, Size size) {
   return AnimatedPadding(
     padding: EdgeInsets.only(
       // top: extendDetails ? size.height * 0.3 : size.height * 0.35,
@@ -62,113 +62,6 @@ AnimatedPadding buildHotelDetails(
                               const SizedBox(
                                 height: 15,
                               ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    child: Row(
-                                      children: const [
-                                        Text(
-                                          '5',
-                                          style: TextStyle(
-                                              color: Color(0xff2B2B2B),
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w500,
-                                              letterSpacing: -0.41),
-                                        ),
-                                        Text(
-                                          '\$/hr',
-                                          style: TextStyle(
-                                              color: Color(0xffA1A1A1),
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w500,
-                                              letterSpacing: -0.41),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  const VerticalDivider(
-                                    color: Colors.black,
-                                    thickness: 1,
-                                    indent: 2, //Spacing at the top of divider.
-                                    endIndent:
-                                        2, //Spacing at the bottom of divider.
-                                  ),
-                                  //2
-                                  Container(
-                                    child: Row(
-                                      children: const [
-                                        Text(
-                                          '10',
-                                          style: TextStyle(
-                                              color: Color(0xff2B2B2B),
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w500,
-                                              letterSpacing: -0.41),
-                                        ),
-                                        Text(
-                                          'km',
-                                          style: TextStyle(
-                                              color: Color(0xffA1A1A1),
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w500,
-                                              letterSpacing: -0.41),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-
-                                  //
-                                  Container(
-                                    child: Row(
-                                      children: const [
-                                        Text(
-                                          '4.5',
-                                          style: TextStyle(
-                                              color: Color(0xff2B2B2B),
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w500,
-                                              letterSpacing: -0.41),
-                                        ),
-                                        Icon(
-                                          Icons.star,
-                                          color: Color(0xffA1A1A1),
-                                          size: 20,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-
-                                  //4
-                                  Container(
-                                    child: Row(
-                                      children: const [
-                                        Text(
-                                          '450',
-                                          style: TextStyle(
-                                              color: Color(0xff2B2B2B),
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w500,
-                                              letterSpacing: -0.41),
-                                        ),
-                                        Text(
-                                          'walks',
-                                          style: TextStyle(
-                                              color: Color(0xffA1A1A1),
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w500,
-                                              letterSpacing: -0.41),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 15,
-                              ),
                             ],
                           ),
                         ],
@@ -179,6 +72,142 @@ AnimatedPadding buildHotelDetails(
                         height: size.height * 0.02,
                         color: const Color(0xffA1A1A1),
                       ),*/
+
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Container(
+                          color: Colors.transparent,
+                          width: MediaQuery.of(context).size.width,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                child: Row(
+                                  children: const [
+                                    Text(
+                                      '5',
+                                      style: TextStyle(
+                                          color: Color(0xff2B2B2B),
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: -0.41),
+                                    ),
+                                    Text(
+                                      '\$/hr',
+                                      style: TextStyle(
+                                          color: Color(0xffA1A1A1),
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: -0.41),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              /*  const VerticalDivider(
+                                color: Colors.black,
+                                thickness: 1,
+                                indent: 2, //Spacing at the top of divider.
+                                endIndent:
+                                    2, //Spacing at the bottom of divider.
+                              ),*/
+                              Container(
+                                height: 15,
+                                width: 2,
+                                color: const Color(0xffA1A1A1),
+                              ),
+                              //2
+                              Container(
+                                child: Row(
+                                  children: const [
+                                    Text(
+                                      '10',
+                                      style: TextStyle(
+                                          color: Color(0xff2B2B2B),
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: -0.41),
+                                    ),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      'km',
+                                      style: TextStyle(
+                                          color: Color(0xffA1A1A1),
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: -0.41),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                height: 15,
+                                width: 2,
+                                color: const Color(0xffA1A1A1),
+                              ),
+                              //
+                              Container(
+                                child: Row(
+                                  children: const [
+                                    Text(
+                                      '4.5',
+                                      style: TextStyle(
+                                          color: Color(0xff2B2B2B),
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: -0.41),
+                                    ),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Color(0xffA1A1A1),
+                                      size: 15,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                height: 15,
+                                width: 2,
+                                color: const Color(0xffA1A1A1),
+                              ),
+                              //4
+                              Container(
+                                child: Row(
+                                  children: const [
+                                    Text(
+                                      '450',
+                                      style: TextStyle(
+                                          color: Color(0xff2B2B2B),
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: -0.41),
+                                    ),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      'walks',
+                                      style: TextStyle(
+                                          color: Color(0xffA1A1A1),
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: -0.41),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
                       const Divider(
                         color: Color(0xffA1A1A1),
                       ),
